@@ -1,0 +1,42 @@
+mat-toolbar {
+  background-color: #5e7b9e; /* color principal */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  height: 64px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Roboto, sans-serif;
+}
+
+mat-toolbar span {
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+mat-toolbar a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-left: 1.2rem;
+  transition: all 0.25s ease;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+mat-toolbar a:hover {
+  background-color: #4b6783; /* tono más oscuro al pasar el mouse */
+  transform: translateY(-1px);
+}
+
+mat-toolbar a.active-link {
+  background-color: rgba(255, 255, 255, 0.25);
+  font-weight: 600;
+}
+
+router-outlet {
+  display: block;
+  padding: 2rem;
+}
