@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-final": {
+    "angularII-final": {
       "projectType": "application",
       "root": "",
       "sourceRoot": "src",
@@ -15,33 +15,27 @@
             "outputPath": "docs",
             "index": "src/index.html",
             "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
             "styles": [
-              "src/custom-theme.scss",
               "src/styles.css"
             ],
-            "scripts": [],
             "baseHref": "/angularII-final/"
           },
           "configurations": {
             "production": {
-              "fileReplacements": [
-                {
-                  "replace": "src/environments/environment.ts",
-                  "with": "src/environments/environment.prod.ts"
-                }
-              ],
-              "outputHashing": "all"
+              "outputHashing": "all",
+              "optimization": true,
+              "sourceMap": false,
+              "extractLicenses": true
             },
             "development": {
-              "buildOptimizer": false,
               "optimization": false,
               "sourceMap": true,
               "extractLicenses": false
@@ -53,10 +47,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "angular-final:build:production"
+              "buildTarget": "angularII-final:build:production"
             },
             "development": {
-              "browserTarget": "angular-final:build:development"
+              "buildTarget": "angularII-final:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -73,20 +67,12 @@
             ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
-              "src/favicon.ico",
-              "src/assets"
+              {
+                "glob": "**/*",
+                "input": "public"
+              }
             ],
-            "styles": [
-              "src/styles.css"
-            ],
-            "scripts": []
-          }
-        },
-        "deploy": {
-          "builder": "angular-cli-ghpages:deploy",
-          "options": {
-            "dir": "docs",
-            "baseHref": "/angularII-final/"
+            "styles": ["src/styles.css"]
           }
         }
       }
